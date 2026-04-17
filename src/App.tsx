@@ -1,11 +1,10 @@
 
 function App() {
-
   return (
-    <>
-      <h1>hello</h1>
-    </>
-  )
+    <div className="bg-red-500 text-white text-5xl p-10">
+      TEST
+    </div>
+  );
 }
 
 export default App
