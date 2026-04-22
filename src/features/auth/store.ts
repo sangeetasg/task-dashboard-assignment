@@ -1,15 +1,12 @@
-const AUTH_KEY = "isLoggedIn";
+const KEY = "auth";
 
-const setAuth = (value: boolean) => {
-  localStorage.setItem(AUTH_KEY, value ? "true" : "false");
+export const login = (username: string) => {
+  localStorage.setItem(KEY, JSON.stringify({ isLoggedIn: true, username }));
 };
-
-export const login = () => {
-  setAuth(true);
-};
-
 export const logout = () => {
-  setAuth(false);
+  localStorage.removeItem(KEY);
 };
 
-export const getAuth = () => localStorage.getItem(AUTH_KEY) === "true";
+export const getAuth = () => {
+  return JSON.parse(localStorage.getItem(KEY) || "null");
+};

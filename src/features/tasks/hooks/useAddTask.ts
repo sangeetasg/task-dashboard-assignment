@@ -32,8 +32,5 @@ export const useAddTask = () => {
             localStorage.setItem("tasks", JSON.stringify(context?.previousTasks ?? []));
         },
 
-        // onSettled: () => {
-        //     queryClient.invalidateQueries({ queryKey: ["tasks"] });
-        // },
     });
 };
